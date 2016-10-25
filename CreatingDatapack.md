@@ -110,5 +110,5 @@ TODO: Fix the datapack schema so that docson renders it correctly
 
 <script src="http://lbovet.github.io/docson/widget.js" data-schema="https://dl.dropboxusercontent.com/u/8191579/datatype_schema_v02.json"></script>
 
-If the above doesn't work, check the datapack schema [here](http://lbovet.github.io/docson/index.html#https://dl.dropboxusercontent.com/u/8191579/datatype_schema_v02)
+If the above doesn't work, check the datapack schema [here](http://lbovet.github.io/docson/index.html#https://dl.dropboxusercontent.com/u/8191579/datatype_schema_v02.json)
 
