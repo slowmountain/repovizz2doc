@@ -14,23 +14,26 @@ In the rest of this guide, we will walk through the process of creating a datapa
 
 ## Creating the datapack JSON
 
-asdasdasd
+We'll use an example datapack that includes the datapack JSON document along with a list of data files.
 
 ### Example datapack
 
 This example datapack contains a multimodal recording carried out using [Thalmic Labs' MYO](https://www.myo.com/), accompanied by audio and video from a handheld video camera. The following data files are present inside the datapack:
 
+<center>
+
 Filename | Description
 ---------|------------
 video.mp4 | video recording from a handheld camera
 audio.wav | audio recording from the camera's microphone
-emg.csv | 8-channel muscle activity (EMG) data 
-accelerometer.csv | 3-axis accelerometer data
-gyroscope.csv | 3-axis gyroscope data 
-orientation.csv | 3-axis orientation data
+emg.json | 8-channel muscle activity (EMG) data 
+accelerometer.json | 3-axis accelerometer data
+gyroscope.json | 3-axis gyroscope data 
+orientation.json | 3-axis orientation data
 
+</center>
 
-
+The video and audio files are in standard H.264 MP4 and wave format, while the sensor data are stored inside json arrays. We'll talk more about the file formats that repovizz2 uses in a little bit; for the time being let's take a look at the datapack JSON document:
 
 	{
 	    "info": {
@@ -96,19 +99,35 @@ orientation.csv | 3-axis orientation data
 	    }]
 	}
 
+As you can see, the document contains two top-level objects:
+
+* An *"info"* object which holds metadata about the datapack (name, author, description, keywords)
+* A *"children"* object which holds an array with a hierarchical structure for the contents of the datapack.
+
+Within the *children* array, datapack contents are hierarchically organized using two types of nodes: **data** nodes that hold pointers to data files, and **container** nodes that contain other nodes. This way, the user can construct a tree-like structure the leaves of which point to the data included into the datapack.
+
+The structure from the example datapack can be seen below:
+<center><img src="https://dl.dropboxusercontent.com/u/8191579/repovizz2_example_datapack_graph.png" width="300"></center>
+
+### Container nodes
+asdasd
+
+### Data nodes
+asdasd
+
 ### <a name="datapack_schema"></a> The datapack schema
 
-<script src="http://lbovet.github.io/docson/widget.js" data-schema="https://dl.dropboxusercontent.com/u/8191579/datatype_schema_v02.json"></script>
+<script src="http://lbovet.github.io/docson/widget.js" data-schema="https://raw.githubusercontent.com/slowmountain/repovizz2doc/master/datapack_schema.json"></script>
 
-If the above doesn't work, check the datapack schema [here](http://lbovet.github.io/docson/index.html#https://dl.dropboxusercontent.com/u/8191579/datapack_schema.json)
+If the above doesn't work, check the datapack schema [here](http://lbovet.github.io/docson/index.html#https://raw.githubusercontent.com/slowmountain/repovizz2doc/master/datapack_schema.json)
 
 TODO: Document the schema by adding descriptions for every item
 
 TODO: Fix the datapack schema so that docson renders it correctly
 
-## <a name="datatype_schema"></a>The datatype schema
+### <a name="datatype_schema"></a>The datatype schema
 
-<script src="http://lbovet.github.io/docson/widget.js" data-schema="https://dl.dropboxusercontent.com/u/8191579/datatype_schema_v02.json"></script>
+<script src="http://lbovet.github.io/docson/widget.js" data-schema="https://raw.githubusercontent.com/slowmountain/repovizz2doc/master/datatype_schema.json"></script>
 
-If the above doesn't work, check the datapack schema [here](http://lbovet.github.io/docson/index.html#https://dl.dropboxusercontent.com/u/8191579/datatype_schema_v02.json)
+If the above doesn't work, check the datapack schema [here](http://lbovet.github.io/docson/index.html#https://raw.githubusercontent.com/slowmountain/repovizz2doc/master/datatype_schema.json)
 
