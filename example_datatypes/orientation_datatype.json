@@ -1,0 +1,34 @@
+{
+    "datatypeID": "35524338-dec5-40ca-a099-1fff42fb5460",
+    "name": "Orientation (roll, pitch, yaw)",
+    "owner": "ppapiotis",
+    "description": "3-axis orientation derived from quaternion data",
+    "extra": {},
+    "tags": ["orientation"],
+    "datatype": {
+        "lattice": {
+            "primary_dimensions": [{
+                "label": "time",
+                "units": "seconds",
+                "resolution": 200,
+                "description": "time"
+            }],
+            "secondary_dimensions": [{
+                "label": "angle",
+                "units": "radians",
+                "type": "float",
+                "description": "Angular value of the device's orientation."
+            }],
+            "channels": [{
+                "description": "Roll (X) axis",
+                "label": "Roll"
+            }, {
+                "description": "Pitch (Y) axis",
+                "label": "Pitch"
+            }, {
+                "description": "Yaw (Z) axis",
+                "label": "Yaw"
+            }]
+        }
+    }
+}

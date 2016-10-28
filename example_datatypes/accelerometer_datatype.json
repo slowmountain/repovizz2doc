@@ -1,0 +1,34 @@
+{
+    "datatypeID": "ae13fb70-fa1e-47d8-9cd6-00cef4fe21cc",
+    "name": "3-axis accelerometer",
+    "owner": "ppapiotis",
+    "description": "XYZ axis accelerometer data",
+    "extra": {},
+    "tags": ["accelerometer"],
+    "datatype": {
+        "lattice": {
+            "primary_dimensions": [{
+                "label": "time",
+                "units": "seconds",
+                "resolution": 200,
+                "description": "time"
+            }],
+            "secondary_dimensions": [{
+                "label": "acceleration",
+                "units": "g",
+                "type": "float",
+                "description": "Acceleration measured in g (9.8 m/s^2)"
+            }],
+            "channels": [{
+                "description": "X axis",
+                "label": "X"
+            }, {
+                "description": "Y axis",
+                "label": "Y"
+            }, {
+                "description": "Z axis",
+                "label": "Z"
+            }]
+        }
+    }
+}

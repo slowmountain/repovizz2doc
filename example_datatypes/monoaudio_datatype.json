@@ -1,0 +1,32 @@
+{
+    "datatypeID": "48e3b5d2-c34c-459c-9a2d-0756c20d80de",
+    "name": "Mono 44100 audio",
+    "owner": "ppapiotis",
+    "description": "Mono audio recording at a sampling rate of 44100Hz.",
+    "extra": {},
+    "tags": ["audio", "mono"],
+    "datatype": {
+        "lattice": {
+            "primary_dimensions": [{
+                "label": "time",
+                "units": "seconds",
+                "resolution": 44100,
+                "description": "time"
+            }],
+            "secondary_dimensions": [{
+                "label": "Audio Intensity",
+                "units": "a.u.",
+                "type": "float",
+                "description": "Audio intensity ranging from -1.0 to 1.0.",
+                "range": {
+                    "min_val": "-1.0",
+                    "max_val": "1.0"
+                }
+            }],
+            "channels": [{
+                "description": "Mono",
+                "label": "M"
+            }]
+        }
+    }
+}

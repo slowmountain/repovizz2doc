@@ -1,0 +1,34 @@
+{
+    "datatypeID": "35524338-dec5-40ca-a099-1fff42fb5460",
+    "name": "3-axis gyroscope",
+    "owner": "ppapiotis",
+    "description": "XYZ axis gyroscope data",
+    "extra": {},
+    "tags": ["gyroscope"],
+    "datatype": {
+        "lattice": {
+            "primary_dimensions": [{
+                "label": "time",
+                "units": "seconds",
+                "resolution": 200,
+                "description": "time"
+            }],
+            "secondary_dimensions": [{
+                "label": "angular velocity",
+                "units": "radians/second",
+                "type": "float",
+                "description": "Angular velocity measured in radians per second."
+            }],
+            "channels": [{
+                "description": "X axis",
+                "label": "X"
+            }, {
+                "description": "Y axis",
+                "label": "Y"
+            }, {
+                "description": "Z axis",
+                "label": "Z"
+            }]
+        }
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "datatypeID": "0746bb48-9b92-4cd3-8d9e-3e1de13269eb",
+    "name": "MYO 8-channel EMG",
+    "owner": "ppapiotis",
+    "description": "8-channel electromyography (EMG) data from Thalmic Labs' MYO sensor",
+    "extra": {},
+    "tags": ["EMG, MYO"],
+    "datatype": {
+        "lattice": {
+            "primary_dimensions": [{
+                "label": "time",
+                "units": "seconds",
+                "resolution": 200,
+                "description": "time"
+            }],
+            "secondary_dimensions": [{
+                "label": "Muscle activity",
+                "units": "a.u.",
+                "type": "integer",
+                "description": "Arbitrary units of muscle activation ranging from -128 to 127.",
+                "range": {
+                    "min_val": "-128",
+                    "max_val": "127"
+                }
+            }],
+            "channels": [{
+                "description": "Channel 1",
+                "label": "1"
+            }, {
+                "description": "Channel 2",
+                "label": "2"
+            }, {
+                "description": "Channel 3",
+                "label": "3"
+            }, {
+                "description": "Channel 4",
+                "label": "4"
+            }, {
+                "description": "Channel 5",
+                "label": "5"
+            }, {
+                "description": "Channel 6",
+                "label": "7"
+            }, {
+                "description": "Channel 7",
+                "label": "7"
+            }, {
+                "description": "Channel 8",
+                "label": "8"
+            }]
+        }
+    }
+}
