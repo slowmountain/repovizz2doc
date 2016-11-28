@@ -36,19 +36,29 @@
 		"datatype": {
 			"description": "The datatype specification. One of [lattice, sparse, other]",
 			"type": "object",
-			"oneOf": [{
-				"properties": {
-					"lattice": {"$ref": "#/definitions/lattice"}
+			"oneOf": [
+				{
+					"properties": {
+						"lattice": {"$ref": "#/definitions/lattice"}
+					},
+					"required": ["lattice"],
+					"additionalProperties": false
 				},
-				"required": ["lattice"],
-				"additionalProperties": false
-			}, {
-				"properties": {
-					"other": {"$ref": "#/definitions/other"}
-				},
-				"required": ["other"],
-				"additionalProperties": false
-			}]
+				{
+					"properties": {
+						"sparse": {"$ref": "#/definitions/sparse"}
+					},
+					"required": ["sparse"],
+					"additionalProperties": false
+				}, 
+				{
+					"properties": {
+						"other": {"$ref": "#/definitions/other"}
+					},
+					"required": ["other"],
+					"additionalProperties": false
+				}
+			]
 		}
 	},
 	"required": [
@@ -164,6 +174,97 @@
 				"primary_dimensions",
 				"secondary_dimensions",
 				"channels"
+			],
+			"additionalProperties": false
+		},
+		"sparse": {
+			"description": "SPARSE datatypes describe sparsely/non-uniformly sampled data.",
+			"type": "object",
+			"properties": {
+				"dimensions": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"label": {
+								"type": "string"
+							},
+							"units": {
+								"type": "string"
+							},
+							"description": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"label",
+							"units",
+							"description"
+						],
+						"additionalProperties": false
+					}
+				},
+				"format": {
+					"description": "TODO",
+					"type": "object",
+					"properties": {
+						"primary_dimensions": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"label": {
+										"type": "string"
+									},
+									"primaryDimension": {
+										"type": "number"
+									},
+									"description": {
+										"type": "string"
+									}
+								},
+								"required": [
+									"label",
+									"primaryDimension",
+									"description"
+								],
+								"additionalProperties": false
+							}
+						},
+						"secondary_dimensions": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"label": {
+										"type": "string"
+									},
+									"type": {
+										"type": "string"
+									},
+									"description": {
+										"type": "string"
+									}
+								},
+								"required": [
+									"label",
+									"type",
+									"description"
+								],
+								"additionalProperties": false
+							}
+						}
+					},
+					"required": [
+						"primary_dimensions",
+						"secondary_dimensions"
+					],
+					"additionalProperties": false
+				}
+			},
+			"required": [
+				"dimensions",
+				"format"
 			],
 			"additionalProperties": false
 		},
